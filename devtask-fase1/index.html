@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevTask - Gestor de Tareas</title>
+    <style>
+        body { font-family: system-ui, sans-serif; max-width: 600px; margin: 2rem auto; padding: 0 1rem; }
+        form, .filtros { display: flex; gap: 0.5rem; margin-bottom: 1rem; }
+        input { flex: 1; padding: 0.5rem; }
+        ul { list-style: none; padding: 0; }
+        li { display: flex; justify-content: space-between; align-items: center; padding: 0.6rem; border-bottom: 1px solid #ddd; }
+        .completada { text-decoration: line-through; opacity: 0.6; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>DevTask</h1>
+    </header>
+
+    <main>
+        <form id="form-tarea">
+            <input type="text" id="input-titulo" placeholder="Nueva tarea..." required>
+            <select id="select-prioridad">
+                <option value="Alta">Alta</option>
+                <option value="Media" selected>Media</option>
+                <option value="Baja">Baja</option>
+            </select>
+            <button type="submit">Añadir</button>
+        </form>
+
+        <nav class="filtros" aria-label="Filtrar tareas">
+            <button type="button" data-filtro="todas">Todas</button>
+            <button type="button" data-filtro="pendientes">Pendientes</button>
+            <button type="button" data-filtro="completadas">Completadas</button>
+        </nav>
+
+        <ul id="lista-tareas"></ul>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
